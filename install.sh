@@ -123,3 +123,4 @@ NO_INTERACTIVE=true sh -c "$(curl -fsSL https://raw.githubusercontent.com/subtle
 # comment out the above line after run the first time.
 chsh -s $(which zsh)
 
+#if host is thor or loki install private repo
