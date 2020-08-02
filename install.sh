@@ -124,3 +124,10 @@ NO_INTERACTIVE=true sh -c "$(curl -fsSL https://raw.githubusercontent.com/subtle
 chsh -s $(which zsh)
 
 #if host is thor or loki install private repo
+mkdir -p ~/Projects
+cd ~/Projects
+git clone https://zarexogre@bitbucket.org/zarexogre/setup-ubuntu-developer-private.git
+
+cd setup-ubuntu-developer-private
+./bitbucket.sh
+./post-install.sh
