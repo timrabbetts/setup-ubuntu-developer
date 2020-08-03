@@ -19,7 +19,7 @@ sudo apt-get update
 # Install node
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install nodejs -y
-node -v 
+node -v
 npm -v
 
 # Install requirements.
@@ -34,8 +34,9 @@ sudo apt install -y \
     curl \
     software-properties-common \
     meld \
-    git-cola \    
+    git-cola \
     vlc \
+    vim \
     npm \
     gimp \
     flameshot \
@@ -78,10 +79,7 @@ cp -R ./includes/terminator ~/.config/
 # Install docker.
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
 sudo apt-get update
 sudo apt-get install docker-ce -y
