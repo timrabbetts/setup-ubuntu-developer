@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#wget https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.6.0-Linux-x64.deb
-#sudo dpkg -i VNC-Server-6.6.0-Linux-x64.deb
+wget https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.6.0-Linux-x64.deb
+sudo dpkg -i VNC-Server-6.6.0-Linux-x64.deb
 
 wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.20.113-Linux-x64.deb
 sudo dpkg -i VNC-Viewer-6.20.113-Linux-x64.deb
@@ -20,7 +20,7 @@ sudo apt install ansible -y
 
 # Install node
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install nodejs -y
+sudo apt-get install nodejs npm -y
 node -v
 npm -v
 
@@ -39,14 +39,12 @@ sudo apt install -y \
     git-cola \
     vlc \
     vim \
-    npm \
     gimp \
     flameshot \
     ctags \
     php-cli php-mbstring php-xml \
     gconf2 gconf-service gvfs-bin \
     sublime-text \
-    snapd \
     ansible \
     openjdk-8-jdk
 
@@ -72,12 +70,6 @@ fi
 sudo curl -s https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
-# Copy over terminator config.
-cp -R ./includes/terminator ~/.config/
-
-# Install powerline font.
-./includes/powerline/install.sh
-
 # Install docker.
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -98,14 +90,6 @@ docker-compose --version
 
 sudo groupadd docker
 sudo gpasswd -a tim docker
-
-# Install atom code editor.
-#wget -O atom-amd64.deb https://atom.io/download/deb
-#sudo dpkg -i atom-amd64.deb
-#rm atom-amd64.deb
-#cd ~/Projects && git clone ssh://git@uk-gitlab.almuk.santanderuk.corp:2220/open-banking/api-security/labs.git
-#rm -rf ~/.atom
-#ln -s ~/Projects/labs/labs/atom_settings ~/.atom
 
 # Install node sass so auto compiles from atom.
 #sudo npm install node-sass -g
